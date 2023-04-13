@@ -36,17 +36,17 @@ Magic. Seriously, this is a foundation, not a framework. You still have to style
 
 There are a lot of things that Vanilla5 does for you automatically, a lot you have to do yourself. Here are a couple helpers that I have included.
 
-## Using Grunt
+## Using Gulp
 
-Grunt is a JavaScript task runner build upon Node.js. This is super helpful for doing things like processing LESS/SCSS, minifying, image optimization, etc. If you are unfamiliar with how to use Grunt visit http://gruntjs.com/getting-started.
+GulpJS is a JavaScript task runner build upon Node.js. This is super helpful for doing things like processing SCSS, minifying, image optimization, etc. If you are unfamiliar with how to use Gulp visit https://gulpjs.com/docs/en/getting-started/quick-start.
 
-The files included are the basics. You still need to know how to install the Grunt CLI and Grunt plugins.
+The files included are the basics. You still need to know how to install the Gulp CLI and Gulp plugins.
 
 ## Using PugJS
 
 PugJS is a template engine influenced by Haml. It is built upon JavaScript for Node.js. If you have yet to use it, please try it out. It is awesome.
 
-The concept is you have pug files in the `app` folder along with your SCSS files and using Grunt (or something else of your choosing) to compile out the files to the `build` folder and running your project from there.
+The concept is you have pug files in the `app` folder along with your SCSS files and using Gulp (or something else of your choosing) to compile out the files to the `build` folder and running your project from there.
 
 You can install PugJS through NPM with:
 
@@ -54,10 +54,10 @@ You can install PugJS through NPM with:
 $ npm install pug
 ```
 
-or by using the GruntJS version with
+or by using the GulpJS version with
 
 ```
-$ npm install grunt-contrib-pug --save-dev
+$ npm install gulp-pug --save-dev
 ```
 
 To find out more information on Pug and how to use it visit https://pugjs.org/api/getting-started.html
