@@ -1,0 +1,98 @@
+mixin state-dropdown()
+  select
+    option(value="AL") AL
+    option(value="AK") AK
+    option(value="AZ") AZ
+    option(value="AR") AR
+    option(value="CA") CA
+    option(value="CO") CO
+    option(value="CT") CT
+    option(value="DE") DE
+    option(value="DC") DC
+    option(value="FL") FL
+    option(value="GA") GA
+    option(value="HI") HI
+    option(value="ID") ID
+    option(value="IL") IL
+    option(value="IN") IN
+    option(value="IA") IA
+    option(value="KS") KS
+    option(value="KY") KY
+    option(value="LA") LA
+    option(value="ME") ME
+    option(value="MD") MD
+    option(value="MA") MA
+    option(value="MI") MI
+    option(value="MN") MN
+    option(value="MS") MS
+    option(value="MO") MO
+    option(value="MT") MT
+    option(value="NE") NE
+    option(value="NV") NV
+    option(value="NH") NH
+    option(value="NJ") NJ
+    option(value="NM") NM
+    option(value="NY") NY
+    option(value="NC") NC
+    option(value="ND") ND
+    option(value="OH") OH
+    option(value="OK") OK
+    option(value="OR") OR
+    option(value="PA") PA
+    option(value="RI") RI
+    option(value="SC") SC
+    option(value="SD") SD
+    option(value="TN") TN
+    option(value="TX") TX
+    option(value="UT") UT
+    option(value="VT") VT
+    option(value="VA") VA
+    option(value="WA") WA
+    option(value="WV") WV
+    option(value="WI") WI
+    option(value="WY") WY
+
+mixin month-dropdown()
+  select
+    option(value="01") 1 - Jan
+    option(value="02") 2 - Feb
+    option(value="03") 3 - Mar
+    option(value="04") 4 - Apr
+    option(value="05") 5 - May
+    option(value="06") 6 - Jun
+    option(value="07") 7 - Jul
+    option(value="08") 8 - Aug
+    option(value="09") 9 - Sept
+    option(value="10") 10 - Oct
+    option(value="11") 11 - Nov
+    option(value="12") 12 - Dec
+
+mixin year-dropdown-up()
+  select
+    - for (x = 2021; x <= 2028; x++)
+      option(value=x)= x
+
+mixin day-dropdown()
+  select
+    - for (x = 1; x <= 31; x++)
+      option(value=x)= x
+
+mixin year-dropdown-down()
+  select
+    - for (x = 2021; x > 1900; x--)
+      option(value=x)= x 
+
+
+mixin county-dropdown()
+  select
+    option(value="United States") United States
+    option(value="Canada") Cananda
+
+
+mixin svg(id, classname)
+  if classname
+    svg(class=classname)
+      use(xlink:href=id)
+  else
+    svg
+      use(xlink:href=id)

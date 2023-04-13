@@ -1,0 +1,31 @@
+{
+  "name": "vanilla5",
+  "version": "3.1",
+  "author": "Chris Bishop <mechwd@msn.com> (http://cibgraphics.com)",
+  "description": "HTML5 based foundation to kickstart the majority of your projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cibgraphics/Vanilla5.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "html5",
+    "framework",
+    "vanilla5"
+  ],
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-svgstore": "^9.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.59.3"
+  }
+}
