@@ -8,7 +8,6 @@ const prefix = require('gulp-autoprefixer');
 const minify = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const imagemin = require('gulp-imagemin');
-const imagewebp = require('gulp-webp');
 const pug = require('gulp-pug');
 const rename = require('gulp-rename');
 const svgstore = require('gulp-svgstore');
@@ -34,24 +33,18 @@ function jsmin(){
 }
 
 function optimiseimg(){
-  return src('./app/assets/images/*.{jpg,png}')
+  return src('./app/assets/images/**/*')
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 80, progressive: true, }),
-      imagemin.optipng({ optimizationLevel: 2 })
+      imagemin.optipng({ optimizationLevel: 2 }),
+      imagemin.gifsicle({interlaced: true}),
     ]))
     .pipe(dest('./build/assets/images'))
     .pipe(connect.reload())
 }
 
-function webpImage() {
-  return src('./build/assets/images/*.{jpg,png}')
-    .pipe(imagewebp())
-    .pipe(dest('./build/assets/images'))
-    .pipe(connect.reload())
-}
-
 function compilePug() {
-  return src('./app/views/pages/*.pug')
+  return src('./app/views/pages/**/*.pug')
     .pipe(pug())
     .pipe(dest('./build'))
     .pipe(connect.reload())
@@ -83,8 +76,7 @@ function serveTask() {
 function watchTask(){
   watch('./app/assets/scss/**/*.scss', compilescss);
   watch('./app/assets/js/**/*.js', jsmin);
-  watch('./app/assets/images/**/*.{jpg,png}', optimiseimg);
-  watch('./build/assets/images/**/*.{jpg,png}', webpImage);
+  watch('./app/assets/images/**/*', optimiseimg);
   watch('./app/views/**/*.pug', compilePug);
   watch('./app/assets/svg/**/*.svg', svgMap);
 }
@@ -96,7 +88,6 @@ exports.default = series(
   compilescss,
   jsmin,
   optimiseimg,
-  webpImage,
   compilePug,
   svgMap,
   gulp.parallel(serveTask, watchTask)
